@@ -1,13 +1,12 @@
-from ..observer.observer import Observer
+from observer.observer import Observer
 
 class Samourai(Observer):
-    def __init__(self):
-        self.nom = ""
-        self.force = 0
+    def __init__(self, name):
+        self.name = name
+        self.power = 0
         self.arme = None
         self.dog = None
 
-    # Accesseur pour l'arme du Samourai
     def getArme(self):
         return self.arme
 
@@ -23,26 +22,17 @@ class Samourai(Observer):
             self.arme = None
             arme.setSamourai(None)
 
-    # Accesseurs pour le nouvel attribut 'nom'
-    def getNom(self):
-        return self.nom
+    def getPower(self):
+        return self.power
 
-    def setNom(self, nom):
-        self.nom = nom
+    def setPower(self, power):
+        self.power = power
 
-    # Accesseurs pour le nouvel attribut 'force'
-    def getForce(self):
-        return self.force
-
-    def setForce(self, force):
-        self.force = force
-
-    # Méthode pour augmenter la force du Samourai
-    def augmenterForce(self, augmentation):
-        self.force += augmentation
+    def improvePower(self, augmentation):
+        self.power += augmentation
 
     def power(self):
-        totalPower = self.force
+        totalPower = self.power
 
         if self.arme is not None:
             totalPower += 2 * self.arme.getNiveau()
@@ -56,13 +46,12 @@ class Samourai(Observer):
         self.dog = dog
         dog.register_observer(self)
 
-    # Nouvelle méthode pour nourrir le dog
     def feedDog(self, food):
         if self.dog is not None:
             self.dog.feed(food)
 
-    # Implémentation de la méthode de l'observateur
+    # Implement observer method
     def update(self, state):
-        print(f"{self.nom} observe : {state}")
+        print(f"{self.name} observe : {state}")
 
     

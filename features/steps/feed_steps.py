@@ -5,8 +5,7 @@ from src.objects.dog import Dog
 
 @given('a samourai named "{samourai_name}"')
 def step_given_samourai(context, samourai_name):
-    context.samourai = Samourai()
-    context.samourai.setNom(samourai_name)
+    context.samourai = Samourai(samourai_name)
 
 @given('a dog named "{dog_name}"')
 def step_given_dog(context, dog_name):

@@ -1,7 +1,7 @@
 class Arme:
-    def __init__(self):
-        self.nom = ""
-        self.niveau = 0
+    def __init__(self, name):
+        self.name = name
+        self.lvl = 0
         self.samourai = None
 
     def setSamourai(self, samourai):
@@ -9,18 +9,8 @@ class Arme:
         if samourai is not None and samourai.arme != self:
             samourai.setArme(self)
 
-    # Accesseur pour le nom de l'arme
-    def getNom(self):
-        return self.nom
+    def getLvl(self):
+        return self.lvl
 
-    # Mutateur pour le nom de l'arme
-    def setNom(self, nom):
-        self.nom = nom
-
-    # Accesseur pour le niveau de l'arme
-    def getNiveau(self):
-        return self.niveau
-
-    # Mutateur pour le niveau de l'arme
-    def setNiveau(self, niveau):
+    def setLvl(self, niveau):
         self.niveau = niveau

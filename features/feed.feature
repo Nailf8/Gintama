@@ -7,10 +7,10 @@ Feature: Samurai Feeds Dog
     Then the dog should be satisfied
 
   Scenario Outline: Samourai feeds his dog with various foods
-  Given a samourai named "Samurai Jack"
-  And a dog named "Akira"
-  When the samourai feeds the dog with <food>
-  Then the dog should be satisfied
+    Given a samourai named "Samurai Jack"
+    And a dog named "Akira"
+    When the samourai feeds the dog with <food>
+    Then the dog should be satisfied
 
     Examples:
         | food            |

@@ -18,8 +18,9 @@ class Dog:
             observer.update(state)
 
     def feed(self, food):
-        state = f"{self.name} est nourri avec {food}."
-        self.notify_observers(state)
-        self.satisfied = True
+        if food:
+            state = f"{self.name} est nourri avec {food}."
+            self.notify_observers(state)
+            self.satisfied = True
         
 

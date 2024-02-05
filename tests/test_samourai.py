@@ -1,6 +1,7 @@
 import unittest
-from samourai import Samourai
-from arme import Arme
+from package.samourai import Samourai
+from package.arme import Arme
+
 
 class SamouraiTest(unittest.TestCase):
 
@@ -11,12 +12,12 @@ class SamouraiTest(unittest.TestCase):
         self.arme.setLvl(20)
         self.samourai.setArme(self.arme)
 
-    def testAugmenterForce(self):
+    def testImprovePower(self):
         self.samourai.improvePower(20)
         self.assertEqual(90, self.samourai.getPower())
 
     def testFixture(self):
-        # Add your fixture test code here
+        # Add fixture test code here
         pass
 
     def testAssociationBidirectionnelle(self):

@@ -31,16 +31,13 @@ class Samourai(Observer):
     def improvePower(self, augmentation):
         self.power += augmentation
 
-    def power(self):
+    def computeTotalPower(self):
         totalPower = self.power
 
         if self.arme is not None:
-            totalPower += 2 * self.arme.getNiveau()
+            totalPower += 2 * self.arme.getLvl()
 
         return totalPower
-    
-    def computeTotalPower(self):
-        return self.power()
 
     def setDog(self, dog):
         self.dog = dog

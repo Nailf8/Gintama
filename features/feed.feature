@@ -1,4 +1,4 @@
-Feature: Samurai Feeds Dog
+Feature: Samourai Feeds Dog
 
   Scenario: Samurai feeds his dog
     Given a samourai named "Gintoki"
@@ -7,8 +7,8 @@ Feature: Samurai Feeds Dog
     Then the dog should be satisfied
 
   Scenario Outline: Samourai feeds his dog with various foods
-    Given a samourai named "Samurai Jack"
-    And a dog named "Akira"
+    Given a samourai named "Gintoki"
+    And a dog named "Sadaharu"
     When the samourai feeds the dog with <food>
     Then the dog should be satisfied
 
@@ -19,3 +19,9 @@ Feature: Samurai Feeds Dog
         | rice            |
         | vegetables      |
         | dog biscuits    |
+
+  Scenario: Samurai does not feed his dog
+    Given a samourai named "Gintoki"
+    And a dog named "Sadaharu"
+    When the samourai feeds the dog with ""
+    Then the dog eat "Shinpachi and Kagura"

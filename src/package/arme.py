@@ -12,5 +12,5 @@ class Arme:
     def getLvl(self):
         return self.lvl
 
-    def setLvl(self, niveau):
-        self.niveau = niveau
+    def setLvl(self, lvl):
+        self.lvl = lvl
